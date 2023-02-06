@@ -1,5 +1,8 @@
 package com.davidsantiagoiriarte.cabifystore.di
 
+import com.davidsantiagoiriarte.domain.factory.discount.DiscountFactory
+import com.davidsantiagoiriarte.domain.factory.discount.TShirtDiscountFactory
+import com.davidsantiagoiriarte.domain.factory.discount.VoucherDiscountFactory
 import com.davidsantiagoiriarte.domain.model.Discount
 import com.davidsantiagoiriarte.domain.model.Product
 import com.davidsantiagoiriarte.domain.repositories.ProductRepository
@@ -11,7 +14,6 @@ import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Named
 import javax.inject.Singleton
-
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -27,7 +29,12 @@ object UseCaseModule {
     @Provides
     @Singleton
     fun provideGetProductsDiscountsUseCase(): UseCase<List<Product>, List<Discount>> {
-        return GetProductsDiscountsUseCase()
+        return GetProductsDiscountsUseCase(
+            listOf(
+                VoucherDiscountFactory(),
+                TShirtDiscountFactory()
+            )
+        )
     }
 
     @Provides

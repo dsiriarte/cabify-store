@@ -20,10 +20,6 @@ val fakeProducts = listOf(
     Product("MUG", "Cabify Coffee Mug", 7.5, 1)
 
 )
-val fakeDiscounts = listOf(
-    Discount("Discount Cabify VOUCHER", 10.0),
-    Discount("Discount Cabify T-Shirt", 2.0)
-)
 
 fun Double.convertToEurFormat(): String {
     val format: NumberFormat = NumberFormat.getCurrencyInstance()

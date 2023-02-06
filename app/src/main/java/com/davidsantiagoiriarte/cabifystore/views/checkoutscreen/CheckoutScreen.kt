@@ -19,8 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.davidsantiagoiriarte.cabifystore.util.convertToEurFormat
-import com.davidsantiagoiriarte.cabifystore.util.fakeDiscounts
-import com.davidsantiagoiriarte.cabifystore.util.fakeProducts
 import com.davidsantiagoiriarte.domain.model.Discount
 import com.davidsantiagoiriarte.domain.model.Product
 
