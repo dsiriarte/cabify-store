@@ -50,7 +50,11 @@ fun MainScreen(navController: NavController, mainViewModel: MainViewModel = hilt
                 )
             }
             Button(
-                onClick = { navController.navigate(route = Screen.CheckoutScreen.route) },
+                onClick = {
+                    if (products.sumOf { it.cant } > 0) {
+                        navController.navigate(route = Screen.CheckoutScreen.route)
+                    }
+                },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp)
